@@ -1,0 +1,29 @@
+{% extends 'events/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="pb-2 text-decoration-underline">
+                    Add A Calendar Event:
+                </legend>
+
+                {{ form|crispy }}
+
+                {% if object.id %}
+                <button type="submit" class="btn btn-success">
+                    Update Event
+                </button>
+                {% else %}
+                <button type="submit" class="btn btn-success">
+                    Add Event
+                </button>
+                {% endif %}
+            </fieldset>
+        </form>
+    </div>
+
+{% endblock %}

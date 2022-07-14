@@ -1,0 +1,22 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row text-center">
+        <h1>Are you sure you want to delete event ID {{ object.id }}? </h1>
+    </div>
+    <div class="row-fluid d-flex justify-content-center">
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger text-decoration-none text-white">
+                DELETE
+            </button>
+            <button class="btn btn-secondary">
+                <a href="{% url 'events-detail' object.id %}" class="text-decoration-none text-white">
+                    Cancel
+                </a>
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
