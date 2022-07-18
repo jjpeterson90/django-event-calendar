@@ -11,7 +11,7 @@ class Event(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     
     def get_absolute_url(self):
-        return reverse('events-detail', kwargs={'pk': self.pk})
+        return reverse('events:events-detail', kwargs={'pk': self.pk})
     
     def __str__(self):
         return self.name

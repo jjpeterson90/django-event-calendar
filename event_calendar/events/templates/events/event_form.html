@@ -1,5 +1,13 @@
-{% extends 'events/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
+
+
+{% block title %}
+    <div class="container">
+        <h1 class="display-3 text-center">New Event Form</h1>
+    </div>
+{% endblock title %}
 
 {% block content %}
     
@@ -26,4 +34,4 @@
         </form>
     </div>
 
-{% endblock %}
+{% endblock content %}

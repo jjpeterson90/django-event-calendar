@@ -1,4 +1,11 @@
-{% extends 'events/base.html' %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    <div class="container">
+        <h1 class="display-3 text-center">Event Details</h1>
+    </div>
+{% endblock title %}
 
 {% block content %}
 <div class="container">
@@ -16,15 +23,15 @@
                 <a href="/" class="card-link text-decoration-none text-dark">Home</a>
             </button>
             <button class="btn btn-primary">
-                <a href="{% url 'events-create' %}" class="card-link text-decoration-none text-white">New Event</a>
+                <a href="{% url 'events:events-create' %}" class="card-link text-decoration-none text-white">New Event</a>
             </button>
             <button class="btn btn-warning">
-                <a href="{% url 'events-update' object.id %}" class="card-link text-decoration-none text-dark">Update</a>
+                <a href="{% url 'events:events-update' object.id %}" class="card-link text-decoration-none text-dark">Update</a>
             </button>
             <button class="btn btn-danger">
-                <a href="{% url 'events-delete' object.id %}" class="card-link text-decoration-none text-white">Delete</a>
+                <a href="{% url 'events:events-delete' object.id %}" class="card-link text-decoration-none text-white">Delete</a>
             </button>
         </div>
     </div>
 </div>
-{% endblock %}
+{% endblock content %}

@@ -1,3 +1,4 @@
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
 from events.models import Event
@@ -20,7 +21,7 @@ class EventUpdateView(UpdateView):
     
 class EventDeleteView(DeleteView):
     model = Event
-    success_url = reverse_lazy('events-list')
+    success_url = reverse_lazy('events:events-list')
     
 def create_view(request):
     if request.method == 'POST':
